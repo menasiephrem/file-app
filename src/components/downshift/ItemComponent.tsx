@@ -1,6 +1,6 @@
-import MaterialIcon from "@material/react-material-icon";
 import React from "react";
 import { classNames } from "../../utils";
+import MaterialIcon from "../Icon/MaterialIcon";
 export interface Item {
   hasNodes: boolean;
   isOpen: boolean;

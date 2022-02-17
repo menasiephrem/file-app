@@ -1,6 +1,6 @@
-import MaterialIcon from "@material/react-material-icon";
 import Button from "./buttons/Button";
 import FileSelector from "./downshift/FileExplorer";
+import MaterialIcon from "./Icon/MaterialIcon";
 
 interface IFileProps {
   header?: {
