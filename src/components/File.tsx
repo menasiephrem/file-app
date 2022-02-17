@@ -10,6 +10,7 @@ interface IFileProps {
   }
   data: IFileDate[];
   onItemClick: (item: any) => void;
+  maxHeight?: number;
 }
 
 export interface IFileDate {
@@ -20,7 +21,7 @@ export interface IFileDate {
     nodes?: IFileDate[],
 }
 
-const File = ({header, data, onItemClick}: IFileProps) => {
+const File = ({header, data, onItemClick, maxHeight}: IFileProps) => {
   return (
     <div className="flex w-[302px] flex-col shadow bg-white task-shadow">
       {header && <div className="flex bg-white justify-between  border-b-[1px] border-gray-300 px-4 py-6">
@@ -31,7 +32,7 @@ const File = ({header, data, onItemClick}: IFileProps) => {
           <MaterialIcon className="pr-1 text-sm" icon="add" /> {header.buttonText}
         </Button>
       </div>}
-      <div className="px-4 py-3">
+      <div style={{maxHeight}} className="px-4 py-3 overflow-y-scroll max-h-[80vh]">
         <FileSelector data={data} onItemClick={onItemClick}  />
       </div>
     </div>
