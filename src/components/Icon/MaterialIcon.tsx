@@ -5,7 +5,7 @@ interface IMaterialIconProps extends React.HTMLProps<HTMLSpanElement> {
 }
 
 const MaterialIcon = ({ icon, className, ...rest }: IMaterialIconProps) => {
-  return <span {...rest} className={" material-icons " + className ?? ""}>{icon}</span>;
+  return <span {...rest} className={ (className ?? "") + " task-material-icons" }>{icon}</span>;
 };
 
 export default MaterialIcon;
