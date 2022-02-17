@@ -26,10 +26,11 @@ const styleClass = {
       "text-[8px] px-1 rounded-md ml-auto",
       active ? "bg-[#269BF7] text-white" : " bg-gray-300"
     ),
-  file: (active: boolean, isFile: boolean) =>
+  file: (isFile: boolean, iconClass?: string) =>
     classNames(
       "flex items-center text-sm pr-3 material-icon-outlined",
-      isFile ? "text-yellow-300" : "text-task-blue"
+      !iconClass && isFile ? "text-yellow-300" : "text-task-blue",
+      iconClass && iconClass
     ),
 };
 
@@ -61,6 +62,8 @@ export const ItemComponent: React.FunctionComponent<TreeMenuItem> = ({
   numbers = "",
   level,
   file,
+  icon,
+  iconClass,
 }) => (
   <li
     className={styleClass.root(level, active)}
@@ -82,8 +85,8 @@ export const ItemComponent: React.FunctionComponent<TreeMenuItem> = ({
     {!hasNodes && (
       <span key={active ? "1" : "2"} className="">
         <MaterialIcon
-          className={styleClass.file(active ?? false, file)}
-          icon={file ? "insert_drive_file" : "folder"}
+          className={styleClass.file(file, iconClass)}
+          icon={icon ? icon : file ? "insert_drive_file" : "folder"}
         />
       </span>
     )}
