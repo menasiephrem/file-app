@@ -20,7 +20,7 @@ const styleClass = {
       active && "bg-[#DFF0FE]"
     ),
   label: (active: boolean) =>
-    classNames("font-normal text-sm", active ? "text-task-blue" : "text-black"),
+    classNames("font-normal text-sm truncate", active ? "text-task-blue" : "text-black"),
   badge: (active?: boolean) =>
     classNames(
       "text-[8px] px-1 rounded-md ml-auto",
@@ -90,7 +90,7 @@ export const ItemComponent: React.FunctionComponent<TreeMenuItem> = ({
         />
       </span>
     )}
-    <span className={styleClass.label(false)}>{label}</span>
+    <span title={label} className={styleClass.label(false)}>{label}</span>
     <span className={styleClass.badge(active)}>{numbers}</span>
   </li>
 );

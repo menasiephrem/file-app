@@ -3,7 +3,7 @@ import File from "./File";
 const data = [
   {
     key: "mammal",
-    label: "Mammal",
+    label: "mammal long long long long long long long long long string ",
     numbers: "234",
     nodes: [
       {
